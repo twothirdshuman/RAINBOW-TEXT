@@ -10,8 +10,6 @@ void RepeatTextRainbow(const char* text)
 
     char* outputText = (char*)malloc(strlen(text) + 14 /*the rest of my string*/);
 
-    unsigned int numberPrinted = 0;
-
     while (1)
     {
         struct winsize size;
@@ -23,7 +21,6 @@ void RepeatTextRainbow(const char* text)
              sprintf(outputText, "\033[1;%dm%s\033[0m ", n, text);
              printf("%s", outputText);
              fflush(stdout);
-             numberPrinted++;
              usleep(2000);
         }
     }
